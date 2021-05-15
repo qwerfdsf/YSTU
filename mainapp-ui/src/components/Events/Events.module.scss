@@ -1,0 +1,11 @@
+.wrapper {
+  width: 1140px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2.5rem;
+}
+
+.eventsForYou, .eventsAll, .eventsCompleted {
+  text-align: center;
+  grid-column: 1 / 2;
+}

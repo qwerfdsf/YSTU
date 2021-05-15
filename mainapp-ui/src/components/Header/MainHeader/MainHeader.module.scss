@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.logo {
+  height: 50px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .user {
+    height: 40px;
+  }
+
+  .profileName {
+    color: #13447E;
+    font-size: 18px;
+    margin: 0 10px 0 5px;
+  }
+
+  .settings, .notification, {
+    width: 26px;
+    margin-left: 5px;
+  }
+
+  .exit {
+    width: 24px;
+    margin-left: 5px;
+  }
+}
+
+

@@ -1,0 +1,41 @@
+p {
+  font-size: 1.8em;
+  font-weight: 500;
+  color: #13447E;
+}
+
+.wrapper {
+  width: 1140px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2.5rem;
+}
+
+.info {
+  text-align: center;
+  grid-column: 1 / 2;
+
+}
+
+.skills {
+  text-align: center;
+  grid-column: 2 / 3;
+
+}
+
+.events {
+  text-align: center;
+  grid-column: 1 / 3;
+
+}
+
+.projects {
+  text-align: center;
+  grid-column: 1 / 3;
+}
+
+
+
+
+
+

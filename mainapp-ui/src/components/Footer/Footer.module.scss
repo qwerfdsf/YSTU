@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 2.5rem;
+  box-shadow: 0 -2px 5px 0 rgba(#1B6DD3, 0.2);
+}
+
+.wrapper {
+  width: 1140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social, .copyright, .techSupport {
+  display: flex;
+  align-items: center;
+  color: #13447E;
+}
+
+.social img {
+  height: 32px;
+  margin-right: 5px;
+}
+
+.techSupport a{
+  text-decoration: none;
+  color: #13447E;
+}

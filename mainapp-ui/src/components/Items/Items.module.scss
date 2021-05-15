@@ -1,0 +1,6 @@
+.wrapper {
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+  grid-column-gap: 2.5rem;
+}
