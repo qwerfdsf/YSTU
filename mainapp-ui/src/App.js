@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {BrowserRouter, Route} from "react-router-dom";
 import './App.css';
 import Header from "./components/Header/Header";
@@ -10,6 +10,7 @@ import Vacancies from "./components/Vacancies/Vacancies";
 
 
 const App = (props) => {
+
     return (
         <BrowserRouter>
             <div>
@@ -26,6 +27,9 @@ const App = (props) => {
                     </Route>
                     <Route path='/vacancies'>
                         <Vacancies/>
+                    </Route>
+                    <Route path='/rating'>
+
                     </Route>
                 </div>
                 <Footer/>
