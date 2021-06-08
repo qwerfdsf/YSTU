@@ -1,71 +1,45 @@
+
 from rest_framework import serializers
 from ..models import (
     Student, Profile,
     Group, Education,
     Specialization, Faculty,
-    Direction, Events
+     Direction, Events, Skills
 )
 
 
-class DirectionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Direction
-        fields = '__all__'
-
-
-class EventsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Events
-        fields = '__all__'
-
-
-class FacultySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Faculty
-        fields = '__all__'
-
-
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = '__all__'
-
-
-class EducationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Education
-        fields = '__all__'
-
-
-class GroupSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Group
-        fields = '__all__'
-
-
-class SpecializationSerializer(serializers.ModelSerializer):
-    profile = ProfileSerializer()
-    faculty = FacultySerializer()
-    direction = DirectionSerializer()
-    events = EventsSerializer()
+class SkillsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Specialization
-        fields = '__all__'
+        model = Skills
+        fields = "__all__"
 
 
 class StudentSerializer(serializers.ModelSerializer):
-    group = GroupSerializer()
+    group_name = serializers.CharField(source='group.group_name')
 
     class Meta:
         model = Student
-        fields = ('surname', 'student_name', 'middlename', 'group')
+        fields = ('surname', 'student_name', 'middlename', 'group_name')
 
 
-class EducationListRetrieveSerializer(serializers.ModelSerializer):
+class SpecializationSerializer(serializers.ModelSerializer):
+    profile = serializers.CharField(source='profile.profile_name')
+    faculty = serializers.CharField(source='faculty.faculty_name')
+    direction = serializers.CharField(source='direction.direction_name')
+
+    class Meta:
+        model = Specialization
+        fields = ('profile', 'faculty', 'direction')
+
+
+class EducationSerializer(serializers.ModelSerializer):
     student = StudentSerializer()
     specialization = SpecializationSerializer()
 
     class Meta:
         model = Education
-        fields = '__all__'
+        fields = ('student', 'specialization')
+
+
+

@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Skills(models.Model):
+    skills_id = models.AutoField(primary_key=True)
+    skills_name = models.CharField(max_length=150)
+
+    class Meta:
+        managed = False
+        db_table = 'Skills'
+
+    def __str__(self):
+        return self.skills_name
+
 class Group(models.Model):
     group_id = models.AutoField(db_column='Group_id', primary_key=True)  # Field name made lowercase.
     group_name = models.CharField(db_column='Group_name', max_length=32)  # Field name made lowercase.

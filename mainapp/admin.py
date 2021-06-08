@@ -6,6 +6,7 @@ from .models import (
     Group,
     Education,
     Specialization,
+    Skills
 
 )
 
@@ -17,3 +18,4 @@ admin.site.register(Education)
 admin.site.register(Specialization)
 admin.site.register(Faculty)
 admin.site.register(Events)
+admin.site.register(Skills)

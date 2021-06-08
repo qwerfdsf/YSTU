@@ -1,26 +1,35 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets
 from .serializers import(
+     SkillsSerializer,
     EducationSerializer,
-    EducationListRetrieveSerializer
+    StudentSerializer
 )
-from ..models import Education
+from ..models import Education, Student, Skills
 
 
 class EducationViewSet(viewsets.ModelViewSet):
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
-    permission_classes = [permissions.IsAuthenticated]
     action_to_serializer = {
-        "list": EducationListRetrieveSerializer,
-        "retrieve": EducationListRetrieveSerializer
+        "list": EducationSerializer,
+        "retrieve": EducationSerializer
     }
 
-    def get_serializer_class(self):
-        return self.action_to_serializer.get(
-            self.action,
-            self.serializer_class,
-        )
+
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    action_to_serializer = {
+        "list": StudentSerializer,
+        "retrieve": StudentSerializer
+    }
 
 
-
+class SkillsViewSet(viewsets.ModelViewSet):
+    queryset = Skills.objects.all()
+    serializer_class = SkillsSerializer
+    action_to_serializer = {
+        "list": SkillsSerializer,
+        "retrieve": SkillsSerializer
+    }
 
